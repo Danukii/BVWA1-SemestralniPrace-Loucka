@@ -1,11 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>StudyPlanner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    
+
+<body class="bg-gray-900 text-white min-h-screen">
+
+    <!-- NAVBAR -->
+    <header class="bg-gray-800 p-4 shadow">
+        <nav class="flex justify-between items-center max-w-6xl mx-auto">
+            <h1 class="text-xl font-bold text-purple-400">StudyPlanner</h1>
+            <ul class="flex gap-6">
+                <li><a href="#" class="hover:text-purple-400">Dashboard</a></li>
+                <li><a href="#" class="hover:text-purple-400">About</a></li>
+                <li><a href="#" class="hover:text-purple-400">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main class="max-w-6xl mx-auto p-6 grid md:grid-cols-3 gap-6">
+        
+        <!-- TASKS -->
+        <section id="today-tasks" class="md:col-span-2 bg-gray-800 p-5 rounded-2xl shadow">
+            <h2 class="text-lg font-semibold mb-4">Dnešní úkoly</h2>
+
+            <!-- ADD TASK -->
+            <form id="taskForm" class="flex gap-2 mb-4">
+                <input id="taskInput" type="text" placeholder="Nový úkol..."
+                  class="flex-1 p-2 rounded bg-gray-700 outline-none">
+                <button class="bg-purple-500 px-4 py-2 rounded hover:bg-purple-600">
+                  Přidat
+                </button>
+            </form>
+
+            <!-- TASK LIST -->
+            <ul id="taskList" class="space-y-2"></ul>
+        </section>
+
+        <!-- NOTES -->
+        <aside class="bg-gray-800 p-5 rounded-2xl shadow">
+            <h2 class="text-lg font-semibold mb-4">Poznámky</h2>
+            <textarea id="notes"
+                class="w-full h-40 p-2 bg-gray-700 rounded outline-none"
+                placeholder="Napiš si poznámky..."></textarea>
+        </aside>
+
+        <!-- PLANNER -->
+        <section id="add-task" class="md:col-span-3 bg-gray-800 p-5 rounded-2xl shadow">
+            <h2 class="text-lg font-semibold mb-4">Planner</h2>
+            <p class="text-gray-400">Zde později přidáš kalendář nebo plán dní</p>
+        </section>
+
+    </main>
+
+    <script src="app.js"></script>
+
+    <aside>
+        <!-- třeba poznámky nebo motivace -->
+    </aside>
+
+    <footer></footer>
 </body>
 </html>
