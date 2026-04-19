@@ -1,14 +1,11 @@
 1) Co přesně bude aplikace dělat
 
 Aplikace umožní uživateli:
-
-plánovat úkoly na konkrétní den
-vytvářet studijní bloky (např. „Matika 2h“)
-ukládat poznámky
-sledovat splněné úkoly
-mít přehled dne na jednom místě
-
-→ to jasně splňuje „aplikace dává smysl“
+- plánovat úkoly na konkrétní den
+- vytvářet studijní bloky (např. „Matika 2h“)
+- ukládat poznámky
+- sledovat splněné úkoly
+- mít přehled dne na jednom místě
 
 
 2) Struktura stránek (HTML5 + UX)
@@ -17,64 +14,64 @@ Použij sémantické elementy:
 
 Hlavní stránky:
 
-Home / Dashboard
-dnešní úkoly
-rychlé přidání úkolu
-Planner (kalendář / seznam dní)
-Notes (poznámky)
-About / info
+- Home / Dashboard
+    dnešní úkoly
+    rychlé přidání úkolu
+    Planner (kalendář / seznam dní)
+    Notes (poznámky)
+- About / info
+- Login
 
 
 3) Funkce (důležité pro zápočet)
 
 Povinné (aby to prošlo)
-přidání úkolu
-smazání úkolu
-označení jako splněný
-ukládání do localStorage
-načtení dat po refreshi
+- přidání úkolu
+- smazání úkolu
+- označení jako splněný
+- ukládání do localStorage
+- načtení dat po refreshi
+
 Pokročilé (zvedne hodnocení)
-filtrování (dnes / splněné / nesplněné)
-editace úkolu
-deadline (datum)
-priorita (low / medium / high)
-drag & drop (bonus)
+- filtrování (dnes / splněné / nesplněné)
+- editace úkolu
+- deadline (datum)
+- priorita (low / medium / high)
+- drag & drop (bonus)
 
 
 4) JavaScript – co tam MUSÍ být
 
 Aby splnila „pokročilou práci“:
-
-manipulace s DOM (createElement, appendChild)
-eventy (click, submit)
-práce s polem objektů
-localStorage:
-localStorage.setItem("tasks", JSON.stringify(tasks));
-localStorage.getItem("tasks");
-práce s JSON
+- manipulace s DOM (createElement, appendChild)
+- eventy (click, submit)
+- práce s polem objektů
+- localStorage:
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+    localStorage.getItem("tasks");
+- práce s JSON
 
 
 5) CSS framework
 
 👉 Tailwind
-ideální na:
-pastel (cute)
-neon (dark)
 
 
-6) Design (vyber si styl)
-🎀 Varianta 1 – Cozy / Cute
-pastelové barvy (růžová, béžová, světle modrá)
-kulaté rohy
-jemné stíny
-fonty: „soft“
+6) Design (přepínání motivů)
+
+🎀 Cozy / Cute
+- pastelové barvy (růžová, béžová, světle modrá)
+- kulaté rohy
+- jemné stíny
+- fonty: „soft“
 
 → působí jako self-care planner
 
-🖤 Varianta 2 – Dark / Neon
-černé pozadí
-neonové akcenty (modrá, fialová, zelená)
-glow efekty
+
+🖤 Dark / Neon
+- černé pozadí
+- neonové akcenty (modrá, fialová, zelená)
+- glow efekty
 
 → působí moderně, „IT vibe“
 
@@ -82,14 +79,11 @@ glow efekty
 7) API (volitelné, ale doporučené)
 
 Můžeš přidat:
-
-motivační citáty
-nebo třeba počasí
+- motivační citáty
+- počasí
 
 
 8) Kde budou data
-
-Jednoduchá varianta:
 
 pouze localStorage
 žádný backend

@@ -38,3 +38,69 @@
 </body>
 
 </html>
+
+
+
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Login</title>
+  <link rel="icon" type="image/x-icon" href="/images/paw.ico">
+</head>
+
+<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen">
+
+    <!-- NAVBAR -->
+    <header class="bg-gray-800 p-4 shadow">
+        <nav class="flex justify-between items-center max-w-6xl mx-auto">
+            <h1 class="text-xl font-bold text-purple-400">StudyPlanner</h1>
+            <ul class="flex gap-6">
+                <li><a href="index.html" class="hover:text-purple-400">Dashboard</a></li>
+                <li><a href="about.html" class="hover:text-purple-400">About</a></li>
+                <li><a href="login.html" class="hover:text-purple-400">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main class="max-w-6xl mx-auto p-6 grid md:grid-cols-3 gap-6">
+
+
+    <form id="loginForm" class="bg-gray-800 p-6 rounded-xl space-y-4">
+        <h2 class="text-xl font-bold">Přihlášení</h2>
+
+        <input id="username" type="text" placeholder="Jméno"
+        class="w-full p-2 rounded bg-gray-700">
+
+        <button class="w-full bg-purple-500 p-2 rounded">Přihlásit</button>
+    </form>
+
+    </main>
+
+    <script src="app.js">
+        const form = document.getElementById("loginForm");
+
+        form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const username = document.getElementById("username").value;
+
+        localStorage.setItem("user", username);
+
+        window.location.href = "index.html";
+        });
+    </script>
+    
+    <!-- <script src="app.js"></script> -->
+
+    <aside>
+        <!-- třeba poznámky nebo motivace -->
+    </aside>
+
+    <footer></footer>
+
+</body>
+</html>
