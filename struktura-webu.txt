@@ -14,6 +14,8 @@ Použij sémantické elementy:
 
 Hlavní stránky:
 
+- StudyPlanner / DayPlanner (Self-carePlanner)
+
 - Home / Dashboard
     dnešní úkoly
     rychlé přidání úkolu
@@ -38,6 +40,20 @@ Pokročilé (zvedne hodnocení)
 - deadline (datum)
 - priorita (low / medium / high)
 - drag & drop (bonus)
+- streak (kolik dní po sobě)
+- označení jako splněné
+- Mood tracker (sledování nálady - uživatel si zaznamenává náladu každý den)
+    - výběr nálady (emoji, barvy)
+    - historie
+    - graf (můžeš udělat jednoduchý)
+    - ukládání dat
+- Jednoduchá „mini sociální síť“ (uživatel „přidává příspěvky“ (jen lokálně))
+    - přidání příspěvku
+    - mazání
+    - ukládání
+    - like button
+    - vyhledávání ostatních uživatelů (+ follow, chaty, ...)
+
 
 
 4) JavaScript – co tam MUSÍ být
