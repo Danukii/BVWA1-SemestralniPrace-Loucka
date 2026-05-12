@@ -1,0 +1,235 @@
+body {
+font-family: Nunito, sans-serif;
+transition: 0.4s;
+display: flex;
+align-items: center;
+justify-content: center;
+background: white;
+font-weight: bold;
+color: #ec4899;
+}
+
+header {
+    position: sticky; /* Přichytí navbar */
+    top: 0;
+    z-index: 1000;  /* Zajistí, aby byla navigace nad ostatním obsahem */
+}
+
+/* font-weight: Use a value from 200 to 1000 */
+.nunito-h1 {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 24pt;
+}
+
+.nunito-navbar-h1 {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 12pt;
+}
+
+.nunito-h1 .orbitron-h1 {
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 24pt;
+}
+
+.nunito-navbar-h1 .orbitron-navbar-h1{
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 12pt;
+}
+
+.navbar {
+background: rgba(255,255,255,0.6);
+backdrop-filter: blur(14px);
+border-bottom: 1px solid rgba(255,255,255,0.4);
+box-shadow: 0 10px 40px rgba(31, 31, 31, 0.04);
+}
+
+.gradient-font {
+  background: -webkit-linear-gradient(135deg, #d946ef,#ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.theme-pastel {
+background: linear-gradient(135deg,#f6d7ff,#f1efff,#e1f3ff);
+color: #4b5563;
+}
+
+.theme-neon {
+background: linear-gradient(135deg,#050816,#0f172a,#111827);
+color: #dbeafe;
+}
+
+.theme-neon .planner-card {
+background: rgba(17,24,39,0.7);
+border: 1px solid rgba(34,211,238,0.2);
+box-shadow: 0 0 30px rgba(34,211,238,0.08);
+}
+
+.theme-neon .navbar {
+background: rgba(0,0,0,0.5);
+}
+.logo-circle {
+width: 42px;
+height: 42px;
+border-radius: 999px;
+display: flex;
+align-items: center;
+justify-content: center;
+background: linear-gradient(135deg,#ec4899,#d946ef);
+color: white;
+}
+.nav-link,
+.nav-active,
+.theme-button,
+.login-button {
+padding: 10px 18px;
+border-radius: 999px;
+transition: 0.3s;
+}
+.nav-link:hover {
+background: rgba(255,255,255,0.4);
+}
+.nav-active {
+background: linear-gradient(135deg,#ec4899,#d946ef);
+color: white;
+}
+5
+.theme-button {
+border: 1px solid rgba(255,255,255,0.5);
+}
+.login-button {
+background: linear-gradient(135deg,#ec4899,#d946ef);
+color: white;
+}
+
+.planner-card {
+background: rgba(255,255,255,0.55);
+backdrop-filter: blur(18px);
+border: 1px solid rgba(187, 187, 187, 0.493);
+border-radius: 15px;
+box-shadow: 0 10px 40px rgba(255,105,180,0.08);
+padding: 28px;
+}
+
+
+
+
+
+.theme-neon .planner-card {
+background: rgba(17,24,39,0.7);
+border: 1px solid rgba(34,211,238,0.2);
+box-shadow: 0 0 30px rgba(34,211,238,0.08);
+}
+.planner-input,
+.notes-area {
+background: rgba(255,255,255,0.7);
+border: 1px solid rgba(255,255,255,0.5);
+border-radius: 18px;
+padding: 14px;
+outline: none;
+}
+.theme-neon .planner-input,
+.theme-neon .notes-area {
+background: rgba(0,0,0,0.3);
+border: 1px solid rgba(34,211,238,0.2);
+}
+.add-button,
+.note-button {
+background: linear-gradient(135deg,#ec4899,#d946ef);
+color: white;
+border-radius: 18px;
+padding: 14px 24px;
+}
+.calendar-btn {
+width: 40px;
+height: 40px;
+border-radius: 14px;
+background: rgba(255,255,255,0.7);
+6
+}
+.theme-neon .calendar-btn {
+background: rgba(0,0,0,0.3);
+}
+.calendar-day {
+aspect-ratio: 1;
+border-radius: 18px;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+transition: 0.3s;
+}
+.calendar-day:hover {
+background: #ec4899;
+color: white;
+}
+.selected-day {
+background: linear-gradient(135deg,#ec4899,#d946ef);
+color: white;
+}
+.task-card {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 16px;
+border-radius: 22px;
+background: rgba(255,255,255,0.7);
+}
+.theme-neon .task-card {
+background: rgba(0,0,0,0.3);
+}
+.low-priority {
+border-left: 6px solid #4ade80;
+}
+.medium-priority {
+border-left: 6px solid #facc15;
+}
+.high-priority {
+border-left: 6px solid #ef4444;
+}
+7
+.progress-bar {
+width: 0%;
+height: 100%;
+background: linear-gradient(135deg,#ec4899,#d946ef);
+transition: 0.4s;
+}
+.notes-area {
+width: 100%;
+min-height: 180px;
+resize: vertical;
+}
+.toast {
+padding: 14px 18px;
+border-radius: 18px;
+color: white;
+animation: fadeIn 0.3s ease;
+}
+.success {
+background: #22c55e;
+}
+.error {
+background: #ef4444;
+}
+@keyframes fadeIn {
+from {
+opacity: 0;
+transform: translateY(10px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}

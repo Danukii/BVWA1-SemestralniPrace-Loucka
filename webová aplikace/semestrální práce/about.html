@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="about.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+
+    <title>O aplikaci</title>
+    <link id="favicon" rel="icon" href="images/icon-pastel.png">
+
+    <script defer src="components/theme.js"></script>
+    <script defer src="components/toast.js"></script>
+    <script defer src="components/app.js"></script>
+</head>
+
+<body id="body" class="theme-pastel min-h-screen">
+
+<!-- NAVBAR -->
+<header class="navbar w-full border-b border-white/20 backdrop-blur-lg bg-white/70">
+
+    <nav class="max-w-7xl mx-auto px-6 py-1.5 flex items-center justify-between gap-3 flex-wrap">
+
+        <!-- LEFT -->
+        <div class="flex items-center gap-3">
+            <div class="logo float">🌸</div>
+            <h1 class="text-2xl font-bold gradient-font nunito-navbar-h1">Denní Plán</h1>
+        </div>
+
+        <!-- CENTER -->
+        <div class="hidden md:flex items-center gap-3 flex flex-wrap">
+            <a href="index.html"class="px-5 py-2 nav-link hover:bg-grey-300 transition text-gray-600 tlacitko">
+                <img src="images/dashboard.svg"  alt="icon-dasboard">Dashboard </a>
+
+            <a href="about.html" class="px-5 py-2 nav-btn nav-active tlacitko">
+                <img src="images/about.svg" class="icon-white" alt="icon-about">
+                O aplikaci
+            </a>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="flex items-center gap-3">
+            <button id="themeToggle" title="Přepnout motiv" class="px-5 py-2 theme-btn hover:bg-grey-300 transition flex items-center gap-2 tlacitko">
+                <img src="images/neon.svg" alt="icon-lightning">
+                Neon
+            </button>
+
+            <a href="login.html" class="px-5 py-2 login-btn nav-btn tlacitko">
+                <img src="images/login.svg" class="icon-white" alt="icon-login">
+                Přihlásit</a>
+        </div>
+    </nav>
+</header>
+
+<main class="max-w-7xl mx-auto px-6">
+
+    <!-- About -->
+    <section class="flex flex-col items-center justify-center text-center pt-20 justify-between items-start mt-3 ml-10 mr-10">
+
+        <div class="text-5xl mb-4 float">🌸</div>
+
+        <h3 class="text-4xl font-bold text-[#c46dd6] mb-3">O aplikaci</h3>
+
+        <p class="about-text text-lg"><b>Denní Plán</b> je tvůj osobní pomocník pro studium a produktivitu. Organizuj úkoly, plánuj týden, zapisuj poznámky – vše na jednom místě, bez registrace, bez cloudu.</p>
+    </section>
+
+  <!-- Funkce -->
+  <section class="max-w-5xl mx-auto px-6 py-10">
+
+    <h2 class="about-h2 mb-5">Funkce aplikace</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <div class="p-6 funkce-card items-start">
+            <div class="w-8 h-8 rounded-full bg-pink-100 flex justify-center items-center text-pink-400 shrink-0">
+                <img src="images/done.svg" class="quotationMarks" alt="quotation-marks">
+            </div>
+                <h5 class="text-lg transition-all duration-300 nunito-nadpis-funkce"><b>Správa úkolů</b></h5>
+                <p class="nunito-text-funkce leading-relaxed">Přidávej a splňuj úkoly s prioritami (vysoká, střední, nízká). Sleduj svůj denní pokrok pomocí progress baru.</p>
+        </div>
+        
+        <div class="p-6 funkce-card items-start">
+            <div class="w-8 h-8 rounded-full bg-pink-100 flex justify-center items-center text-pink-400 shrink-0">
+                <img src="images/date.svg" class="quotationMarks" alt="quotation-marks">
+            </div>
+                <h5 class="text-lg transition-all duration-300 nunito-nadpis-funkce"><b>Týdenní plánování</b></h5>
+                <p class="nunito-text-funkce leading-relaxed">Přehledný týdenní kalendář. Přepínej mezi dny a plánuj dopředu. Vizuálně vidíš, které dny máš plné úkolů.</p>
+        </div>
+
+        <div class="p-6 funkce-card items-start">
+            <div class="w-8 h-8 rounded-full bg-pink-100 flex justify-center items-center text-pink-400 shrink-0">
+                <img src="images/file.svg" class="quotationMarks" alt="quotation-marks">
+            </div>
+                <h5 class="text-lg transition-all duration-300 nunito-nadpis-funkce"><b>Barevné poznámky</b></h5>
+                <p class="nunito-text-funkce leading-relaxed">Pište si poznámky a rozdělujte je barevně. Editace přímo na místě, žádné rušivé modální okna.</p>
+        </div>
+
+        <div class="p-6 funkce-card items-start">
+            <div class="w-8 h-8 rounded-full bg-pink-100 flex justify-center items-center text-pink-400 shrink-0">
+                <img src="images/quotes.svg" class="quotationMarks" alt="quotation-marks">
+            </div>
+                <h5 class="text-lg transition-all duration-300 nunito-nadpis-funkce"><b>Denní citáty</b></h5>
+                <p class="nunito-text-funkce leading-relaxed">Každý den nový motivační citát v češtině. Potřebuješ inspiraci? Klikni na tlačítko a dostaneš nový.</p>
+        </div>
+
+        <div class="p-6 funkce-card items-start">
+            <div class="w-8 h-8 rounded-full bg-pink-100 flex justify-center items-center text-pink-400 shrink-0">
+                <img src="images/dashboard.svg" class="quotationMarks" alt="quotation-marks">
+            </div>
+                <h5 class="text-lg transition-all duration-300 nunito-nadpis-funkce"><b>Dashboard přehled</b></h5>
+                <p class="nunito-text-funkce leading-relaxed">Měj všechny důležité informace na jednom místě. Sleduj své úkoly, poznámky, progress i denní motivaci v přehledném dashboardu.</p>
+        </div>
+
+        <div class="p-6 funkce-card items-start">
+            <div class="w-8 h-8 rounded-full bg-pink-100 flex justify-center items-center text-pink-400 shrink-0">
+                <img src="images/security.svg" class="quotationMarks" alt="quotation-marks">
+            </div>
+                <h5 class="text-lg transition-all duration-300 nunito-nadpis-funkce"><b>Soukromí & offline</b></h5>
+                <p class="nunito-text-funkce leading-relaxed">Veškerá data se ukládají pouze do tvého prohlížeče (localStorage). Žádný server, žádné sledování.</p>
+        </div>
+      </div>  
+    </section>
+
+    <!-- Téma -->
+    <section class="max-w-5xl mx-auto px-6 py-10">
+
+      <h2 class="about-h2 mb-5">Témata</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+        <!-- Neon -->
+        <div class="p-6 funkce-card items-start border border-cyan-300 bg-cyan-100/20 backdrop-blur-lg">
+            <div class="flex items-center gap-3 mb-4">
+                <img src="images/neon.svg" class="icon-cyan w-5 h-5" alt="neon">
+                <h5 class="text-lg transition-all duration-300 text-cyan-400 nunito-nadpis-funkce"><b>Neon téma</b></h5>
+            </div>    
+                <p class="nunito-text-funkce leading-relaxed">Tmavý kybernetický design se zářivými neonovými efekty. Perfektní pro noční studium.</p>
+        </div>
+        
+        <!-- Pastel -->
+        <div class="p-6 funkce-card items-start border border-pink-200 bg-pink-200/40 backdrop-blur-lg">
+            <div class="flex items-center gap-3 mb-4">
+                <img src="images/pastel.svg" class="icon-pastel w-5 h-5" alt="neon">
+                <h5 class="text-lg transition-all duration-300 text-pink-400 nunito-nadpis-funkce"><b>Pastel téma</b></h5>
+            </div>    
+                <p class="nunito-text-funkce leading-relaxed">Světlý, jemný design s pastelními barvami. Příjemný pro celý den.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SOUKROMÍ -->
+    <section class="max-w-5xl mx-auto px-6 pb-10">
+
+        <div class="funkce-card backdrop-blur-lg p-8 shadow-sm">
+
+            <div class="flex items-center gap-3 mb-5">
+                <img src="images/security.svg" class="icon-pastel w-5 h-5" alt="shield">
+                <p class="text-lg transition-all duration-300 nunito-nadpis-funkce"><b>Soukromí a data</b></p>
+            </div> 
+            <p class="nunito-text-funkce leading-relaxed">Veškerá data (úkoly, poznámky, nastavení) jsou
+                uložena <bold>výhradně ve tvém prohlížeči</bold> pomocí localStorage. Žádná data nejsou odesílána na server. Aplikace funguje i offline. Registrace je volitelná – slouží pouze pro personalizaci jména. Smazáním dat prohlížeče smažeš i všechna data z aplikace.</p>
+        </div>
+    </section>
+
+    <!-- BUTTON -->
+    <div class="md:flex items-center pb-20 justify-center">
+        <a href="index.html"class="px-5 py-2 nav-btn nav-active tlacitko">
+        <img src="images/dashboard.svg" class="icon-white" alt="icon-dasboard">Dashboard</a>
+    </div> 
+
+</main>
+
+    <!-- TOAST -->
+    <div id="toastContainer" class="fixed bottom-5 right-5 space-y-2 z-50"></div>
+
+</body>
+</html>

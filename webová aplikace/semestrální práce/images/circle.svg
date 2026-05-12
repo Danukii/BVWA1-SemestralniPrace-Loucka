@@ -1,0 +1,8 @@
+<svg class="progress-ring w-[78px] h-[78px]" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+
+            <!-- bg -->
+            <circle cx="50" cy="50" r="38" stroke="#f1e8f0" stroke-width="8" fill="transparent"></circle>
+
+            <!-- progress -->
+            <circle id="progressCircle" cx="50" cy="50" r="38" stroke="#bcefff" stroke-width="8" fill="transparent" stroke-linecap="round" style="stroke-dasharray: 238.761; stroke-dashoffset: 238.761;"></circle>
+          </svg>

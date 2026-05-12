@@ -1,0 +1,24 @@
+Klíčové věci proč to teď vypadá stejně jako screenshot:
+
+px-12 py-7 → stejné odsazení celé stránky
+
+navbar má:
+rounded-[22px]
+jemný border
+velký blur/shadow
+správnou výšku h-[104px]
+
+hero sekce:
+gradient přesně do světle fialové
+velké paddingy px-16
+velké headline 58px
+
+scrollbar:
+custom ::-webkit-scrollbar
+růžovo-fialový thumb
+tlustý rounded styl jako na screenshotu
+
+progress card:
+větší radius
+translucent white
+stejný spacing jako UI

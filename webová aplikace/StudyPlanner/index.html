@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Denní plán</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+</head>
+
+<body id="appBody" class="min-h-screen theme-pastel">
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+
+    <nav class="max-w-7xl mx-auto px-6 py-1.5 flex items-center justify-between items-center gap-3 flex-wrap">
+        
+        <!-- LEFT -->
+        <div class="flex items-center gap-3">
+            <div class="logo float">🌸</div>
+            <h1 class="text-2xl font-bold gradient-font nunito-navbar-h1">Denní Plán</h1>
+        </div>
+
+        <!-- CENTER -->
+        <div class="hidden md:flex items-center gap-3 flex flex-wrap">
+            <a href="index.html"class="px-5 py-2 nav-btn nav-active">Dashboard </a>
+
+            <a href="about.html"class="px-5 py-2 nav-btn nav-link hover:bg-pink-100 transition text-gray-600">
+                O aplikaci
+            </a>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="flex items-center gap-3">
+            <button id="themeToggle" class="px-5 py-2 theme-btn hover:bg-pink-100 transition flex items-center gap-2">
+                Neon
+            </button>
+
+            <a href="login.html" class="px-5 py-2 login-btn nav-btn">Přihlásit</a>
+        </div>
+    </nav>
+
+  </header>
+
+
+  <!-- MAIN -->
+  <main class="max-w-7xl mx-auto p-6 space-y-6">
+
+    <!-- POZDRAV + PROCENTO SPLNĚNÝCH ÚLOH -->
+    <section class="p-8 flex flex-wrap justify-between items-start gap-6">
+
+      <div id="welcomeBox" class="p-6 rounded-3xl text-5xl transition-all duration-500"> <!-- gradient-font mb-3 nunito-h1 -->
+        <h2 id="welcomeText" class="text-3xl font-bold"></h2>
+        <p id="subText" class="opacity-80 mt-2 text-gray-500 text-lg"></p>
+      </div>
+
+      <div class="progress-circle-wrapper">
+
+        <div class="progress-circle">
+          <span id="progressPercent">0%</span>
+        </div>
+
+        <p class="text-sm mt-2 text-center text-gray-500">splněno dnes</p>
+
+      </div>
+    </section>
+
+    <!-- CITÁT -->
+    <section class="planner-card p-6 flex justify-between items-center gap-4 flex-wrap">
+      <div>
+        <p id="quoteText" class="italic text-lg text-gray-600"></p>
+      </div>
+      <button id="refreshQuote" class="refresh-btn calendar-btn">
+        ↻
+      </button>
+    </section>
+
+    <!-- GRID -->
+    <section class="grid lg:grid-cols-3 gap-6">
+
+      <!-- TASKS -->
+      <section class="planner-card p-6 lg:col-span-2">
+
+        <div class="flex justify-between items-center mb-6 flex-wrap gap-4">
+          <div>
+            <h3 class="text-2xl mb-1">
+              Dnešní úkoly
+            </h2>
+
+            <p id="taskStats" class="opacity-60 text-sm"></p>
+            <p id="taskCounter" class="text-sm text-gray-400">0/0 splněno</p>
+          </div>
+
+          <input id="taskDate" type="date" class="date-input">
+        </div>
+
+        <!-- FORM -->
+        <form id="taskForm" class="flex flex-col md:flex-row gap-3 mb-6">
+
+          <input
+            id="taskInput"
+            type="text"
+            placeholder="Přidat nový úkol..."
+            class="cute-input planner-input flex-1"
+          >
+
+          <select id="taskPriority" class="cute-input planner-input w-full md:w-40">
+                    <option value="low">&bull; Nízká</option>
+                    <option value="medium">&bull; Střední</option>
+                    <option value="high">&bull; Vysoká</option>
+          </select>
+
+          <button class="pink-btn add-button">
+            Přidat
+          </button>
+        </form>
+
+        <!-- PROGRESS -->
+        <div class="mb-6">
+            <div class="w-full bg-white/50 rounded-full h-3 overflow-hidden">
+                <div id="progressBar" class="progress-bar"></div>
+            </div>
+        <p id="progressText" class="text-sm mt-2 opacity-60"></p>
+        </div>
+
+        <!-- TASK LIST -->
+        <ul id="taskList" class="space-y-3"></ul>
+      </section>
+
+      <!-- CALENDAR -->
+      <aside class="planner-card">
+
+        <div class="flex justify-between items-center mb-5">
+          <h3 id="monthLabel" class="text-2xl font-bold"></h3>
+
+          <div class="flex gap-2">
+            <button id="prevMonth" class="calendar-btn">‹</button>
+            <button id="nextMonth" class="calendar-btn">›</button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-7 text-center text-sm mb-4 opacity-60">
+          <div>Po</div>
+          <div>Út</div>
+          <div>St</div>
+          <div>Čt</div>
+          <div>Pá</div>
+          <div>So</div>
+          <div>Ne</div>
+        </div>
+
+        <div id="calendar" class="grid grid-cols-7 gap-2"></div>
+      </aside>
+    </section>
+
+    <!-- NOTES -->
+    <section class="planner-card p-6">
+        <div class="flex justify-between items-center mb-6">
+            <div>
+      <h3 class="text-2xl font-bold mb-4">Poznámky</h3>
+      <p class="text-sm opacity-60">0 poznámek</p>
+        </div>    
+            <button id="saveNotes" class="note-button">+</button>
+        </div>
+        <textarea id="notes" placeholder="Žádné poznámky. Klikni na „+" pro přidání" class="notes-area"></textarea>
+    </section>
+
+  </main>
+
+  
+  <!-- TOAST -->
+  <div id="toastContainer" class="fixed bottom-5 right-5 space-y-2 z-50"></div>
+
+  <script src="app.js"></script>
+
+</body>
+</html>

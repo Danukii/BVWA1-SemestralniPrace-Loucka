@@ -1,0 +1,103 @@
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  #title {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about-text {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12pt;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding-bottom: 20px;
+}
+
+.about-h2 {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-size: 16pt;
+  text-align: center;
+}
+
+.funkce-card {
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(214, 214, 214, 0.493);
+    border-radius: 13px;
+    box-shadow: 0 10px 40px rgba(255,105,180,0.08);
+}
+
+.nunito-nadpis-funkce {
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 12pt;
+    padding-top: 10px;
+}
+
+.nunito-text-funkce {
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-size: 10pt;
+}
+
+.icon-cyan {
+    filter: brightness(0) 
+            saturate(100%) 
+            invert(60%) 
+            sepia(90%) 
+            saturate(857%) 
+            hue-rotate(152deg) 
+            brightness(98%) 
+            contrast(87%);
+}
+
+.icon-pastel {
+    filter: brightness(0) 
+            saturate(100%) 
+            invert(80%) 
+            sepia(21%) 
+            saturate(2985%) 
+            hue-rotate(291deg) 
+            brightness(100%) 
+            contrast(94%);
+}
+  
+  .letter-frame {
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+  }
+  
+  .letter {
+    font-size: 5rem;
+    font-weight: bold;
+    font-family: monospace;
+    cursor: default;
+    animation: name-intro 1s linear forwards;
+    text-shadow: none;
+  }
+  
+  @keyframes name-intro {
+      from {
+          filter: drop-shadow(-5px -5px 2px #02feff) drop-shadow(-5px -5px 2px #fd00fb);
+      }
+      to {
+          text-shadow: 0 0 2px black;
+          filter: none;
+      }
+  }

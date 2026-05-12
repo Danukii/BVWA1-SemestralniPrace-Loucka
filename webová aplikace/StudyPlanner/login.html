@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Přihlášení</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body id="appBody" class="min-h-screen theme-pastel">
+
+    <div class="login-section p-10 w-full max-w-md">
+
+        <h1 class="text-4xl font-bold mb-8 text-center text-cyan-300">
+            Přihlášení
+        </h1>
+        <p>Přihlas se a pokračuj tam, kde jsi skončil/a</p>
+
+        <form id="loginForm" class="space-y-4">
+
+            <div>
+                <label>Uživatelské jméno</label>
+
+                <input
+                    id="name"
+                    type="name"
+                    class="cute-input w-full"
+                    required
+                >
+            </div>
+
+            <div>
+                <label>Heslo</label>
+
+                <input
+                    id="password"
+                    type="password"
+                    class="cute-input w-full"
+                    required
+                >
+            </div>
+
+            <button class="pink-btn w-full">
+                Přihlásit
+            </button>
+        </form>
+
+        <div class="mt-6 text-center text-sm opacity-70">
+            Přihlášení není povinné. Aplikaci lze plně použít i bez účtu.
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

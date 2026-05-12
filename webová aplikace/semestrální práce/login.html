@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+
+    <title>Přihlášení</title>
+    <link id="favicon" rel="icon" href="images/icon-pastel.png">
+
+    <script defer src="components/theme.js"></script>
+    <script defer src="components/toast.js"></script>
+    <script defer src="components/app.js"></script>
+</head>
+
+<body id="body" class="theme-pastel min-h-screen">
+
+<!-- NAVBAR -->
+<header class="navbar w-full border-b border-white/20 backdrop-blur-lg bg-white/70">
+
+    <nav class="max-w-7xl mx-auto px-6 py-1.5 flex items-center justify-between gap-3 flex-wrap">
+
+        <!-- LEFT -->
+        <div class="flex items-center gap-3">
+            <div class="logo float">🌸</div>
+            <h1 class="text-2xl font-bold gradient-font nunito-navbar-h1">Denní Plán</h1>
+        </div>
+
+        <!-- CENTER -->
+        <div class="hidden md:flex items-center gap-3 flex flex-wrap">
+            <a href="index.html"class="px-5 py-2 nav-btn nav-active tlacitko">
+                <img src="images/dashboard.svg" class="icon-white" alt="icon-dasboard">Dashboard </a>
+
+            <a href="about.html" class="px-5 py-2 nav-link hover:bg-grey-300 transition text-gray-600 tlacitko">
+                <img src="images/about.svg" alt="icon-about">
+                O aplikaci
+            </a>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="flex items-center gap-3">
+            <button id="themeToggle" title="Přepnout motiv" class="px-5 py-2 theme-btn hover:bg-grey-300 transition flex items-center gap-2 tlacitko">
+                <img src="images/neon.svg" alt="icon-lightning">
+                Neon
+            </button>
+
+            <a href="login.html" class="px-5 py-2 login-btn nav-btn tlacitko">
+                <img src="images/login.svg" class="icon-white" alt="icon-login">
+                Přihlásit</a>
+        </div>
+    </nav>
+</header>
+
+
+<main class="max-w-7xl mx-auto space-y-6 px-6">
+    <section class="pt-20 flex flex-wrap justify-between items-start ml-10 mr-10">
+
+        <div class="planner-card">
+            <h1>Tato stránka je momentálně mimo provoz.</h1>
+            <p>Brzy se určitě dočkáte!</p>
+        </div>
+
+    </section>
+</main>
+
+<!-- TOAST -->
+  <div id="toastContainer" class="fixed bottom-5 right-5 space-y-2 z-50"></div>
+
+</body>
+</html>

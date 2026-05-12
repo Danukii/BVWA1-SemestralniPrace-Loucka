@@ -1,0 +1,945 @@
+body {
+    font-family: var(--font-main, Nunito);
+    transition: 0.4s;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    overflow-y: scroll;
+}
+
+ /* scrollbar */
+::-webkit-scrollbar{
+    width: 6px;
+}
+
+::-webkit-scrollbar-track{
+    background: #f4f4f4;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scroll-color, #f9a8d4);
+}
+
+::-webkit-scrollbar-thumb:hover{
+   background:#f38cc8;
+}
+
+.theme-neon ::-webkit-scrollbar-thumb {
+    background: #22d3ee;
+}
+
+.theme-neon ::-webkit-scrollbar-thumb:hover{
+   background: #7df9ff;
+}
+
+header {
+    position: sticky; /* Přichytí navbar */
+    top: 0;
+    z-index: 1000;  /* Zajistí, aby byla navigace nad ostatním obsahem */
+}
+
+/* fonty */
+.gradient-font {
+  background: -webkit-linear-gradient(135deg, #d946ef,#ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.theme-neon .gradient-font {
+    background: linear-gradient(135deg, #22d3ee, #67e8f9,#a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow:0 0 12px rgba(34,211,238,.45);
+}
+
+/* font-weight: Use a value from 200 to 1000 */
+.nunito-h1 {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 24pt;
+}
+
+.orbitron {
+    font-family: "Orbitron", sans-serif;
+}
+
+.nunito-navbar-h1 {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 13pt;
+}
+
+.nunito-h3 {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12pt;
+}
+
+.nunito-quoteText {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 11pt;
+}
+
+.nunito-quoteAuthor {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 9pt;
+  color: #ec4899;
+}  
+
+.nunito-h1 .orbitron-h1 {
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 24pt;
+}
+
+.nunito-navbar-h1 .orbitron-navbar-h1{
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 12pt;
+}
+
+.theme-neon .nunito-h3 {
+    font-family: "Orbitron", sans-serif;
+}
+
+/* navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    animation: anime 0.5s ease forwards;
+}
+@keyframes anime {
+    from{
+        opacity: 0;
+        transform: translate(-50%, -40px);
+    }
+    to{
+        opacity: 1;
+        transform: translate(-50%,0);
+    }
+}
+
+.nav-link,
+.nav-active,
+.theme-btn,
+.login-btn {
+    padding: 10px 18px;
+    border-radius: 999px;
+    transition: 0.3s;
+}
+
+.theme-btn:hover,
+.nav-link:hover {
+    background: rgba(228, 228, 228, 0.514);
+}
+
+.theme-btn {
+    border: 1px solid rgba(255,255,255,0.5);
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: white;
+    border: 1px solid #e5e7eb;
+}
+
+.login-btn {
+    background: #e081a4;
+    color: white;
+}
+
+.nav-btn {
+  padding: 10px 18px;
+  border-radius: 999px;
+  transition: 0.3s;
+}
+
+.nav-btn:hover {
+  background: #ec4899;
+}
+
+.nav-active {
+    background: #e081a4;
+    color: white;
+}
+
+.pink-btn {
+  padding: 12px 22px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.pink-btn:hover {
+    background: #ec4899;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(236,72,153,0.25);
+}
+
+.tlacitko {
+  display: flex;
+  align-items: center;  /* Zarovná prvky na střed vertikálně */
+  gap: 10px;    /* Vytvoří mezeru mezi prvky */
+  padding: 10px 20px;
+}
+
+.theme-neon .tlacitko {
+    background: rgba(0,255,255,.08);
+    border: 1px solid rgba(0,255,255,.25);
+    color: #67e8f9;
+    box-shadow:
+        0 0 10px rgba(34,211,238,.35),
+        0 0 20px rgba(34,211,238,.15);
+    transition: .3s;
+}
+
+.theme-neon .tlacitko:hover {
+    box-shadow:
+        0 0 15px rgba(34,211,238,.6),
+        0 0 35px rgba(34,211,238,.35);
+    transform: translateY(-2px);
+}
+
+/* welcome box */
+.no-color {
+    color: initial; /* Emoji si zachová vlastní barvu */
+}
+
+/* welcome */
+.morning-gradient {
+    background: linear-gradient(135deg,#f59e0b,#f97316);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.afternoon-gradient {
+    background: linear-gradient(135deg,#ec4899,#c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.evening-gradient {
+    background: linear-gradient(135deg,#9a28cf,#2563eb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.night-gradient {
+    background: linear-gradient(135deg,#cbdffa,#171e27);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.theme-neon .gradient-font,
+.theme-neon #welcomeText {
+    font-family: "Orbitron", sans-serif;
+}
+
+.theme-neon .morning-gradient,
+.theme-neon .afternoon-gradient,
+.theme-neon .evening-gradient,
+.theme-neon .night-gradient {
+    background: linear-gradient(
+        135deg,
+        #22d3ee,
+        #a855f7
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* emoji NESMÍ mít gradient */
+.emoji {
+    background: none;
+    -webkit-text-fill-color: initial;
+}
+
+/* dnešní datum */
+.today-date {
+    color: #7c7391;
+}
+
+.today-date-img {
+    fill: none;
+    filter: brightness(0) 
+            saturate(100%) 
+            invert(49%) 
+            sepia(22%) 
+            saturate(416%) 
+            hue-rotate(217deg) 
+            brightness(90%) 
+            contrast(83%);
+}
+
+/* výběr datumu */
+.date-input {
+  background: transparent;
+  border: none;
+  padding: 12px;
+  outline: none;
+}
+
+/* přidat task + priority */
+.cute-input {
+  background: rgba(255,255,255,0.7);
+  border: 1px solid #fbcfe8;
+  border-radius: 18px;
+  padding: 12px;
+  outline: none;
+}
+
+.cute-input:focus {
+  border-color: #ec4899;
+}
+
+/* kalendář */
+.calendar-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: white;
+}
+
+.calendar-day {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.25s;
+  background: rgba(255,255,255,0.7);
+}
+
+.done-task {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.task-check {
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    background: #f3f4f6;
+    color: #ec4899;
+    font-weight: bold;
+    transition: .2s;
+}
+
+.task-check:hover {
+    background: #fbcfe8;
+}
+
+.theme-neon .task-check {
+    background: rgba(0,0,0,.4);
+    border: 1px solid rgba(34,211,238,.3);
+    color: #67e8f9;
+}
+
+.calendar-day:hover {
+  background: #f9a8d4;
+  color: white;
+}
+
+.calendar-btn {
+width: 40px;
+height: 40px;
+border-radius: 14px;
+background: rgba(255,255,255,0.7);
+}
+
+.selected-day {
+  background: linear-gradient(135deg,#ec4899,#d946ef);
+  color: white;
+}
+
+.calendar-dot {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #ec4899, #d946ef);
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-neon .calendar-dot {
+    background: linear-gradient(135deg, #22d3ee, #a855f7);
+    box-shadow: 0 0 10px rgba(34,211,238,.6);
+    color: #081018;
+}
+
+/* progress circle */
+.progress-ring{
+    transform:rotate(-90deg);
+    width: 52px;
+    height: 52px;
+}
+
+.progress-ring circle{
+    transition:0.4s ease;
+ }
+
+.progress-circle-wrapper {
+  display: flex;
+  width: 220px;
+  height: 110px;
+}
+
+/* progress bar */
+.progress-bar {
+width: 0%;
+height: 100%;
+background: linear-gradient(135deg,#ec4899,#d946ef, #0dc9bf);
+transition: 0.4s;
+}
+
+/* .svg na bílou barvu */
+.icon-white {
+    filter: brightness(0) invert(1);    /* Převede jakoukoli barvu na bílou */
+}
+
+/* motivy */
+.theme-pastel {
+    font-family: "Nunito", sans-serif;
+    color: #4b5563;
+    min-height: 100vh;
+    background: linear-gradient(
+                135deg,
+                #fdf4ff 0%,
+                #f5e8ff 35%,
+                #eaf2ff 70%,
+                #e0f7ff 100%
+    );
+
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.theme-neon h1,
+.theme-neon h2,
+.theme-neon h3,
+.theme-neon .today-date,
+.theme-neon .nunito-navbar-h1,
+.theme-neon .nunito-h1,
+.theme-neon .nunito-h3 {
+    font-family: "Orbitron", sans-serif;
+}
+
+.theme-neon {
+    font-family: "Orbitron", sans-serif;
+    color: #67e8f9;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top left,
+        rgba(0,255,255,.08),
+        transparent 30%),
+
+        radial-gradient(circle at bottom right,
+        rgba(168,85,247,.08),
+        transparent 30%),
+
+        #081018;
+
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.theme-neon h1,
+.theme-neon h2,
+.theme-neon h3 {
+    color: #7df9ff;;
+}
+
+.theme-neon p,
+.theme-neon .opacity-60 {
+    color: #d9b3ff;
+}
+
+.theme-neon .planner-card {
+    background: rgba(14, 14, 30, 0.75);
+    border: 1px solid rgba(125,249,255,0.2);
+    box-shadow:
+        0 0 15px rgba(125,249,255,0.15),
+        0 0 35px rgba(180,100,255,0.12);
+
+    backdrop-filter: blur(18px);
+}
+
+.theme-neon .planner-input,
+.theme-neon .notes-area {
+background: rgba(0,0,0,0.3);
+border: 1px solid rgba(34,211,238,0.2);
+box-shadow: 0 0 30px rgba(34,211,238,0.08);
+backdrop-filter: blur(14px);
+}
+
+.theme-neon .navbar {
+background: rgba(0,0,0,0.5);
+border: 1px solid rgba(34,211,238,0.5);
+backdrop-filter: blur(14px);
+}
+
+.theme-neon .calendar-btn,
+.theme-neon .nav-active,
+.theme-neon .nav-link,
+.theme-neon .theme-btn {
+background: rgba(0,0,0,0.3);
+border-color: #0dc9bf;
+border: 1px solid rgba(34,211,238,0.3);
+}
+
+.theme-neon .tlacitko {
+    box-shadow:
+        0 0 10px rgba(125,249,255,0.35);
+    border:
+        1px solid rgba(125,249,255,0.3);
+}
+
+.theme-neon .tlacitko:hover {
+    box-shadow:
+        0 0 18px rgba(125,249,255,0.7);
+}
+
+.theme-neon .task-card {
+background: rgba(0,0,0,0.3);
+backdrop-filter: blur(14px);
+}
+
+.theme-neon .progress-bar {
+    background: linear-gradient(
+        135deg,
+        #22d3ee,
+        #67e8f9,
+        #a855f7
+    );
+}
+
+/* citát */
+.refresh-btn {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    transition: 0.3s;
+}
+
+.refresh-btn:hover {
+    background: #dfb8c66e;
+    color: #ec4899;
+    border-radius: 50%;
+}
+
+.quotationMarks {
+    width: 18px;
+    height: 18px;
+
+    filter:
+        invert(58%)
+        sepia(72%)
+        saturate(749%)
+        hue-rotate(296deg)
+        brightness(97%)
+        contrast(92%);
+}
+
+.spin-animation {
+    animation: spinFast 0.8s ease;
+}
+
+@keyframes spinFast {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(1440deg);
+    }
+}
+
+/* poznámky */
+.notes-area {
+width: 100%;
+min-height: 180px;
+resize: vertical;
+}
+
+.planner-input,
+.notes-area {
+background: rgba(255,255,255,0.7);
+border: 1px solid rgba(255,255,255,0.5);
+border-radius: 18px;
+padding: 14px;
+outline: none;
+}
+
+.add-button {
+background: linear-gradient(135deg,#ec4899,#d946ef);
+color: white;
+border-radius: 18px;
+padding: 14px 24px;
+}
+
+.note-card textarea {
+    min-height: 120px;
+    margin-top: 15px;
+}
+
+.note-card input {
+    font-size: 18px;
+}
+
+.note-card {
+    background: rgba(255,255,255,0.45);
+    border: 1px solid rgba(236,72,153,0.12);
+    border-radius: 20px;
+    padding: 18px;
+    backdrop-filter: blur(12px);
+    transition: .25s ease;
+    min-height: 140px;
+}
+
+.notes-page {
+    padding-bottom: 100px;
+}
+
+.note-card:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 10px 25px rgba(236,72,153,.08);
+}
+
+.note-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #4b5563;
+    margin-bottom: 10px;
+}
+
+.note-text {
+    font-size: 14px;
+    color: #7c7391;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+.note-date {
+    font-size: 12px;
+    opacity: .5;
+}
+
+.task-item {
+    background: rgba(255,255,255,.5);
+    border: 1px solid rgba(236,72,153,.12);
+
+    border-radius: 18px;
+
+    padding: 14px 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    transition: .25s ease;
+}
+
+.task-item:hover {
+    transform: translateY(-2px);
+}
+
+.task-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.task-priority {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+}
+
+.priority-high {
+    background: #ef4444;
+}
+
+.priority-medium {
+    background: #f59e0b;
+}
+
+.priority-low {
+    background: #22c55e;
+}
+
+.task-text {
+    font-size: 15px;
+    color: #4b5563;
+}
+
+/* neon poznámky*/
+.theme-neon .note-card {
+    background: rgba(10,15,25,.55);
+    border: 1px solid rgba(34,211,238,.2);
+
+    box-shadow:
+        0 0 20px rgba(34,211,238,.08);
+}
+
+.theme-neon .note-title {
+    color: #7df9ff;
+}
+
+.theme-neon .note-text {
+    color: #d9b3ff;
+}
+
+.theme-neon .task-item {
+    background: rgba(0,0,0,.25);
+    border: 1px solid rgba(34,211,238,.15);
+}
+
+.theme-neon .task-text {
+    color: #d9b3ff;
+}
+
+/* šablona pro každou část */
+.planner-card {
+background: rgba(255,255,255,0.7);
+backdrop-filter: blur(18px);
+border: 1px solid rgba(214, 214, 214, 0.493);
+border-radius: 15px;
+box-shadow: 0 10px 40px rgba(255,105,180,0.08);
+padding: 18px;
+}
+
+/* šablona pro úkol */
+.task-card {
+  background: rgba(255,255,255,0.70);
+  border: 1px solid rgba(255,255,255,0.7);
+  backdrop-filter: blur(16px);
+  transition: .25s;
+  border-radius: 22px;
+  padding: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(236,72,153,.15);
+}
+
+/* priority */
+.low-priority {
+  border-left: 6px solid #4ade80;
+}
+
+.medium-priority {
+  border-left: 6px solid #facc15;
+}
+
+.high-priority {
+  border-left: 6px solid #ef4444;
+}
+
+.priority-wrapper {
+    position: relative;
+    width: 180px;
+}
+
+.priority-btn {
+    width: 75px;
+    height: 52px;
+    background: rgba(255,255,255,0.75);
+    border: 1px solid #fbcfe8;
+    border-radius: 25px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(12px);
+    transition: .25s;
+}
+
+.priority-btn:hover {
+    border-color: #ec4899;
+}
+
+.to-yellow {
+    border-radius: 8px;
+    padding: 6px;
+}
+
+.priority-menu {
+    position: absolute;
+
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(18px);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.6);
+    box-shadow: 0 15px 35px rgba(0,0,0,.08);
+    z-index: 999;
+}
+
+.priority-option {
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.priority-option:hover {
+    background: rgba(236,72,153,.08);
+}
+
+.priority-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 999px;
+}
+
+.priority-select {
+    background: rgba(255,255,255,.7);
+    border: 1px solid #fbcfe8;
+    border-radius: 16px;
+    padding: 12px 16px;
+    outline: none;
+    color: #7c7391;
+}
+
+.priority-btn {
+    background: #facc15;
+    padding: 8px 12px;
+    border-radius: 10px;
+}
+
+.theme-neon .priority-select {
+    background: rgba(0,0,0,.35);
+    border: 1px solid rgba(34,211,238,.25);
+    color: #7df9ff;
+}
+
+/* priority neon */
+.theme-neon .priority-btn,
+.theme-neon .priority-menu {
+    background: rgba(0,0,0,.5);
+    border: 1px solid rgba(34,211,238,.25);
+    color: #67e8f9;
+    box-shadow: 0 0 20px rgba(34,211,238,.12);
+}
+
+.theme-neon .priority-option:hover {
+    background: rgba(34,211,238,.08);
+}
+
+/* emoji sakury (floating) */
+.logo {
+width: 42px;
+height: 42px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 18pt;
+}
+
+.float {
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* toast notifikace */
+.toast {
+  padding: 14px 18px;
+  border-radius: 18px;
+  color: white;
+  animation: fadeIn 0.3s ease;
+}
+
+.success-toast {
+  background: #22c55e;
+}
+
+.error-toast {
+  background: #ef4444;
+}
+
+@keyframes toastSlide {
+
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-toast {
+    animation: toastSlide .35s ease;
+}
+
+/* login.html */
+.login-section {
+  width: 360px;
+  height: 480px;
+  background-color: white;
+  border-radius: 15px;
+  border: 1px solid rgba(255,206,206,0.04);
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #968e8e;
+}
+

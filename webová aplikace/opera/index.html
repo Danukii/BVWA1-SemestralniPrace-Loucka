@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Denní Plán</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      font-family: 'Inter', sans-serif;
+    }
+
+    body{
+      background:#fafafa;
+      overflow-y:scroll;
+    }
+
+    /*
+      CUSTOM SCROLLBAR
+    */
+
+    ::-webkit-scrollbar{
+      width:14px;
+    }
+
+    ::-webkit-scrollbar-track{
+      background:#f4f4f4;
+    }
+
+    ::-webkit-scrollbar-thumb{
+      background:linear-gradient(
+        to bottom,
+        #f38cc8,
+        #d88fe8
+      );
+
+      border-radius:999px;
+      border:4px solid #f4f4f4;
+    }
+
+    ::-webkit-scrollbar-thumb:hover{
+      background:linear-gradient(
+        to bottom,
+        #ea76ba,
+        #cb7ce3
+      );
+    }
+
+    /*
+      Progress circle
+    */
+
+    .progress-ring{
+      transform:rotate(-90deg);
+    }
+
+    .progress-ring circle{
+      transition:0.4s ease;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- PAGE WRAPPER -->
+  <div class="px-12 py-7">
+
+    <!-- NAVBAR -->
+    <nav class="w-full h-[104px]
+                bg-white/95
+                border border-[#eee]
+                rounded-[22px]
+                shadow-[0_8px_40px_rgba(0,0,0,0.03)]
+                px-9
+                flex items-center justify-between">
+
+      <!-- LEFT -->
+      <div class="flex items-center gap-16">
+
+        <!-- LOGO -->
+        <div class="flex items-center gap-4">
+
+          <div class="text-[38px]">
+            🌸
+          </div>
+
+          <h1 class="text-[26px] font-bold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+            Denní Plán
+          </h1>
+        </div>
+
+        <!-- MENU -->
+        <div class="flex items-center gap-4">
+
+          <!-- ACTIVE -->
+          <button class="h-[50px]
+                        px-6
+                        rounded-2xl
+                        bg-[#fcecf5]
+                        text-[#e56aa7]
+                        font-semibold
+                        flex items-center gap-3">
+
+            <svg xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor">
+
+              <path stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 4h6v6H4V4zm10 0h6v6h-6V4zM4 14h6v6H4v-6zm10 0h6v6h-6v-6z"/>
+            </svg>
+
+            Dashboard
+          </button>
+
+          <!-- NORMAL -->
+          <button class="h-[50px]
+                        px-6
+                        rounded-2xl
+                        text-[#7d738f]
+                        font-semibold
+                        flex items-center gap-3
+                        hover:bg-[#f8f5fa]
+                        transition">
+
+            <svg xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor">
+
+              <path stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+
+            O aplikaci
+          </button>
+
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="flex items-center gap-6">
+
+        <!-- Neon -->
+        <button class="h-[50px]
+                      px-7
+                      rounded-2xl
+                      border border-[#ecd7ee]
+                      bg-white
+                      text-[#af6ac5]
+                      font-semibold
+                      flex items-center gap-3
+                      hover:bg-[#faf7fc]
+                      transition">
+
+          ⚡ Neon
+        </button>
+
+        <!-- Login -->
+        <button class="h-[50px]
+                      px-8
+                      rounded-2xl
+                      bg-gradient-to-r
+                      from-pink-500
+                      to-pink-400
+                      text-white
+                      font-semibold
+                      flex items-center gap-3
+                      shadow-lg
+                      shadow-pink-200/50">
+
+          ↪ Přihlásit
+        </button>
+
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="mt-10
+                    w-full
+                    h-[260px]
+                    rounded-[24px]
+                    px-16
+                    flex items-center justify-between
+                    bg-gradient-to-r
+                    from-[#f7e5ee]
+                    to-[#e8e3f3]">
+
+      <!-- LEFT -->
+      <div>
+
+        <h2 class="text-[58px]
+                  leading-none
+                  font-extrabold
+                  bg-gradient-to-r
+                  from-pink-500
+                  to-purple-500
+                  bg-clip-text
+                  text-transparent">
+
+          Dobré odpoledne, danuki!
+        </h2>
+
+        <p class="mt-7 text-[20px] text-[#7c7391]">
+          Pokračuj ve svých úkolech.
+        </p>
+
+        <div class="mt-10 flex items-center gap-4 text-[#7c7391]">
+
+          <!-- calendar -->
+          <svg xmlns="http://www.w3.org/2000/svg"
+              class="w-7 h-7"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+
+            <path stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.8"
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+          </svg>
+
+          <span class="text-[20px]">
+            Pondělí 11. Květa 2026
+          </span>
+        </div>
+      </div>
+
+      <!-- PROGRESS CARD -->
+      <div class="w-[250px]
+                  h-[135px]
+                  rounded-[24px]
+                  bg-white/90
+                  flex items-center justify-center gap-7
+                  shadow-[0_10px_35px_rgba(0,0,0,0.03)]">
+
+        <!-- TEXT -->
+        <div class="flex flex-col items-end">
+
+          <span id="progressText"
+                class="text-[38px]
+                      font-bold
+                      text-[#c46dd6]">
+
+            0%
+          </span>
+
+          <span class="text-[16px] text-[#83778f]">
+            splněno dnes
+          </span>
+        </div>
+
+        <!-- RING -->
+        <div class="relative w-[78px] h-[78px]">
+
+          <svg class="progress-ring w-[78px] h-[78px]"
+              viewBox="0 0 100 100">
+
+            <!-- bg -->
+            <circle
+              cx="50"
+              cy="50"
+              r="38"
+              stroke="#f1e8f0"
+              stroke-width="8"
+              fill="transparent"
+            />
+
+            <!-- progress -->
+            <circle
+              id="progressCircle"
+              cx="50"
+              cy="50"
+              r="38"
+              stroke="#bcefff"
+              stroke-width="8"
+              fill="transparent"
+              stroke-linecap="round"
+            />
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUOTE CARD -->
+    <section class="mt-10
+                    h-[160px]
+                    rounded-[24px]
+                    border border-[#efe6f0]
+                    bg-gradient-to-r
+                    from-[#f8eef3]
+                    to-[#f0edf8]
+                    px-10
+                    flex items-center justify-between">
+
+      <!-- LEFT -->
+      <div class="flex items-center gap-8">
+
+        <!-- ICON -->
+        <div class="w-[70px]
+                    h-[70px]
+                    rounded-full
+                    bg-[#f6dce8]
+                    flex items-center justify-center">
+
+          <span class="text-[46px] text-pink-500 font-bold">
+            ”
+          </span>
+        </div>
+
+        <!-- TEXT -->
+        <div>
+
+          <p class="text-[25px]
+                    italic
+                    text-[#726a88]">
+
+            „Kdo se ptá, nezabloudí.“
+          </p>
+
+          <p class="mt-4
+                    text-[18px]
+                    font-semibold
+                    text-pink-500">
+
+            — České přísloví
+          </p>
+        </div>
+      </div>
+
+      <!-- REFRESH -->
+      <button class="text-[#8f82a3]
+                    hover:rotate-180
+                    transition
+                    duration-500">
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+            class="w-9 h-9"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor">
+
+          <path stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.8"
+                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+        </svg>
+      </button>
+    </section>
+
+    <!-- fake height -->
+    <div class="h-[900px]"></div>
+
+  </div>
+
+  <script>
+    const progress = 0;
+
+    const circle = document.getElementById("progressCircle");
+    const text = document.getElementById("progressText");
+
+    const radius = 38;
+    const circumference = 2 * Math.PI * radius;
+
+    circle.style.strokeDasharray = circumference;
+
+    const offset =
+      circumference - (progress / 100) * circumference;
+
+    circle.style.strokeDashoffset = offset;
+
+    text.textContent = progress + "%";
+  </script>
+
+</body>
+</html>

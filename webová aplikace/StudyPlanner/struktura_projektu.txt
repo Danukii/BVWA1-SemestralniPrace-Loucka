@@ -1,0 +1,10 @@
+PastelStudyPlanner/
+│
+├── index.html
+├── about.html
+├── login.html
+├── styles.css
+├── app.js
+├── login.js
+└── images/
+    └── logo.png

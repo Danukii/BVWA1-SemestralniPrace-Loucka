@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+
+    <title>Dashboard | Denní plán</title>
+    <link id="favicon" rel="icon" href="images/icon-pastel.png">
+</head>
+
+<body id="body" class="theme-pastel min-h-screen">
+
+<!-- NAVBAR -->
+<header class="navbar w-full border-b border-white/20 backdrop-blur-lg bg-white/70">
+
+    <nav class="max-w-7xl mx-auto px-6 py-1.5 flex items-center justify-between gap-3 flex-wrap">
+
+        <!-- LEFT -->
+        <div class="flex items-center gap-3">
+            <div class="logo float">🌸</div>
+            <h1 class="text-2xl font-bold gradient-font nunito-navbar-h1">Denní Plán</h1>
+        </div>
+
+        <!-- CENTER -->
+        <div class="hidden md:flex items-center gap-3 flex flex-wrap">
+            <a href="index.html"class="px-5 py-2 nav-btn nav-active tlacitko">
+                <img src="images/dashboard.svg" class="icon-white" alt="icon-dasboard">Dashboard </a>
+
+            <a href="about.html" class="px-5 py-2 nav-link hover:bg-grey-300 transition text-gray-600 tlacitko">
+                <img src="images/about.svg" alt="icon-about">
+                O aplikaci
+            </a>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="flex items-center gap-3">
+            <button id="themeToggle" title="Přepnout motiv" class="px-5 py-2 theme-btn hover:bg-grey-300 transition flex items-center gap-2 tlacitko">
+                <img src="images/neon.svg" alt="icon-lightning">
+                Neon
+            </button>
+
+            <a href="login.html" class="px-5 py-2 login-btn nav-btn tlacitko">
+                <img src="images/login.svg" class="icon-white" alt="icon-login">
+                Přihlásit</a>
+        </div>
+    </nav>
+</header>
+
+<!-- MAIN -->
+<main class="max-w-7xl mx-auto space-y-6 px-6">
+
+    <!-- POZDRAV -->
+    <section class="pt-20 flex flex-wrap justify-between items-start ml-10 mr-10">
+
+      <div class="transition-all welcome duration-500">
+        
+        <h2 id="welcomeText" class="text-3xl font-bold nunito-h1"></h2>
+        <p id="subText" class="opacity-80 mt-2 text-gray-500 text-lg nutino-h3"></p>
+
+        <div class="flex items-center gap-2">
+            <img src="images/today-date.svg" class="w-5 h-5 today-date-img" alt="dnesni-datum">
+            <span id="todayDate" class="today-date"></span>
+        </div>
+      </div>
+
+      <!-- PROGRESS CARD -->
+      <div class="progress-circle-wrapper planner-card bg-white/90 items-center justify-center gap-7 items-start">
+
+        <!-- TEXT -->
+        <div class="flex flex-col items-end">
+          <span id="progressText" class="text-[24px] font-bold text-[#c46dd6]">0%</span>
+          <span class="text-[13px] text-[#83778f]">splněno dnes</span>
+        </div>
+
+        <!-- RING -->
+          <svg class="progress-ring" viewBox="0 0 100 100">
+
+            <!-- bg -->
+            <circle cx="50" cy="50" r="38" stroke="#f1e8f0" stroke-width="8" fill="transparent"/>
+
+            <!-- progress -->
+            <circle id="progressCircle" cx="50" cy="50" r="38" stroke="#bcefff" stroke-width="8" fill="transparent" stroke-linecap="round"/>
+          </svg>
+      </div>
+    </section>
+
+    <!-- CITÁT -->
+    <section class="planner-card p-4 opacity-90 bg-white/30">
+        <div class="flex items-start justify-between gap-4w-full">
+
+            <!-- LEFT -->
+            <div class="flex gap-4 items-start">
+
+                <!-- ICON -->
+                <div class="w-11 h-11 rounded-full bg-pink-100 flex items-center justify-center text-pink-400 text-xl shrink-0">
+                    <img src="images/quotes.svg" class="quotationMarks" alt="quotation-marks">
+                </div>
+                
+                <!-- TEXT -->
+                <div>
+                    <p id="quoteText" class="quoteText text-lg transition-all duration-300 nunito-quoteText"></p>
+                
+                    <p id="quoteAuthor" class="quoteAuthor mt-2 font-semibold nunito-quoteAuthor"></p>
+                </div>
+            </div>
+
+            <!-- RIGHT -->
+            <button id="refreshQuote" class="refresh-btn shrink-0" title="Nový citát">↻</button>
+        </div>
+    </section>
+
+    <!-- GRID -->
+    <section class="grid lg:grid-cols-3 gap-6">
+
+      <!-- TASKS -->
+      <section class="planner-card p-6 lg:col-span-2">
+
+        <div class="flex justify-between items-center mb-6 flex-wrap gap-4">
+          <div>
+            <h3 class="text-2xl mb-1">
+              Dnešní úkoly
+            </h3>
+
+            <p id="taskStats" class="opacity-60 text-sm"></p>
+          </div>
+
+          <input id="taskDate" type="date" class="date-input">
+        </div>
+
+        <!-- FORM -->
+        <form id="taskForm" class="flex flex-col md:flex-row gap-3 mb-6">
+
+          <input id="taskInput" type="text" placeholder="Přidat nový úkol..." class="cute-input planner-input flex-1">
+
+          <div class="relative">
+
+            <button button type="button" id="priorityBtn" class="priority-btn to-yellow">
+                <img id="priorityFlag" src="images/priority.svg" alt="priorita">
+                <img src="images/down.svg" alt="down">
+            </button>
+
+          <div id="priorityMenu" class="hidden absolute bg-white shadow rounded">
+            <div class="priority-option" data-value="high">🔴 Vysoká</div>
+            <div class="priority-option" data-value="medium">🟡 Střední</div>
+            <div class="priority-option" data-value="low">🟢 Nízká</div>
+          </div>
+        </div>
+
+          <button type="submit" class="nav-active add-btn pink-btn">
+            Přidat
+          </button>
+        </form>
+
+        <!-- PROGRESS -->
+        <div class="mb-6">
+            <div class="w-full bg-white/50 rounded-full h-3 overflow-hidden">
+                <div id="progressBar" class="progress-bar"></div>
+            </div>
+        <p id="taskProgressText" class="text-sm mt-2 opacity-60"></p>
+        </div>
+
+        <!-- TASK LIST -->
+        <ul id="taskList" class="space-y-3"></ul>
+      </section>
+
+      <!-- CALENDAR -->
+      <aside class="planner-card">
+
+        <div class="flex justify-between items-center mb-5">
+          <h3 id="monthLabel" class="text-2xl font-bold"></h3>
+
+          <div class="flex gap-2">
+            <button id="prevMonth" class="calendar-btn">‹</button>
+            <button id="nextMonth" class="calendar-btn">›</button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-7 text-center text-sm mb-4 opacity-60">
+          <div>Po</div>
+          <div>Út</div>
+          <div>St</div>
+          <div>Čt</div>
+          <div>Pá</div>
+          <div>So</div>
+          <div>Ne</div>
+        </div>
+
+        <div id="calendar" class="grid grid-cols-7 gap-2"></div>
+      </aside>
+    </section>
+
+    <!-- NOTES -->
+    <section class="planner-card p-6 note-page pb-10">
+        <div class="flex justify-between items-center mb-6">
+            <div>
+      <h3 class="text-2xl font-bold mb-4">Poznámky</h3>
+      <p class="text-sm opacity-60">0 poznámek</p>
+        </div>    
+            <button id="newNoteBtn" class="nav-active add-btn pink-btn">+ Nová</button>
+        </div>
+        <div id="notesContainer" class="grid md:grid-cols-2 gap-4"></div>
+    </section>
+
+  </main>
+  
+  <!-- TOAST -->
+  <div id="toastContainer" class="fixed bottom-5 right-5 space-y-2 z-50"></div>
+
+    <script src="components/shared.js"></script>
+    <script src="components/toast.js"></script>
+    <script src="components/theme.js"></script>
+    <script src="components/calendar.js"></script>
+    <script src="components/quotes.js"></script>
+    <script src="components/welcome.js"></script>
+    <script src="components/tasks.js"></script>
+    <script src="components/notes.js"></script>
+    <script src="components/app.js"></script>
+</body>
+</html>

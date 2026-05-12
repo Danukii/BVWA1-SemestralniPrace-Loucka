@@ -1,0 +1,351 @@
+appBody {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  font-weight: bold;
+  color: #ec4899;
+  transition: 0.4s;
+}
+
+header {
+    position: sticky; /* Přichytí navbar */
+    top: 0;
+    z-index: 1000;  /* Zajistí, aby byla navigace nad ostatním obsahem */
+}
+
+/* font-weight: Use a value from 200 to 1000 */
+.nunito-h1 {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 24pt;
+}
+
+.nunito-navbar-h1 {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 12pt;
+}
+
+.nunito-h1 .orbitron-h1 {
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 24pt;
+}
+
+.nunito-navbar-h1 .orbitron-navbar-h1{
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 12pt;
+}
+
+.navbar {
+background: rgba(255,255,255,0.6);
+backdrop-filter: blur(14px);
+border-bottom: 1px solid rgba(255,255,255,0.4);
+box-shadow: 0 10px 40px rgba(31, 31, 31, 0.04);
+}
+
+.gradient-font {
+  background: -webkit-linear-gradient(135deg, #d946ef,#ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.planner-card {
+background: rgba(255,255,255,0.55);
+backdrop-filter: blur(18px);
+border: 1px solid rgba(187, 187, 187, 0.493);
+border-radius: 15px;
+box-shadow: 0 10px 40px rgba(255,105,180,0.08);
+padding: 28px;
+}
+
+.theme-pastel {
+background: linear-gradient(135deg,#f6d7ff,#f1efff,#e1f3ff);
+color: #4b5563;
+}
+
+.theme-neon {
+background: linear-gradient(135deg,#050816,#0f172a,#111827);
+color: #dbeafe;
+}
+
+.theme-neon .planner-card {
+background: rgba(17,24,39,0.7);
+border: 1px solid rgba(34,211,238,0.2);
+box-shadow: 0 0 30px rgba(34,211,238,0.08);
+}
+.planner-input,
+.notes-area {
+background: rgba(255,255,255,0.7);
+border: 1px solid rgba(255,255,255,0.5);
+border-radius: 18px;
+padding: 14px;
+outline: none;
+}
+.theme-neon .planner-input,
+.theme-neon .notes-area {
+background: rgba(0,0,0,0.3);
+border: 1px solid rgba(34,211,238,0.2);
+}
+
+.theme-neon .navbar {
+background: rgba(0,0,0,0.5);
+}
+
+.logo {
+width: 42px;
+height: 42px;
+display: flex;
+align-items: center;
+justify-content: center;
+transition: translateY(0px);
+}
+
+.float {
+    animation: floatEmoji 2s ease-in-out infinite;
+}
+
+@keyframes float {
+    from {
+        transform: translateY(0px);
+    }
+
+    to {
+        transform: translateY(-15px);
+    }
+}
+
+.nav-link,
+.nav-active,
+.theme-btn,
+.login-btn {
+padding: 10px 18px;
+border-radius: 999px;
+transition: 0.3s;
+}
+.nav-link:hover {
+background: rgba(255,255,255,0.4);
+}
+
+
+.theme-btn {
+border: 1px solid rgba(255,255,255,0.5);
+}
+.login-btn {
+background: #e081a4;  /*linear-gradient(135deg,#ec4899,#d946ef);*/
+color: white;
+}
+
+.nav-btn {
+  padding: 10px 18px;
+  border-radius: 999px;
+  transition: 0.3s;
+}
+
+.nav-btn:hover {
+  background: #ec4899;
+}
+
+.nav-active {
+background: #e081a4;
+color: white;
+}
+
+.theme-btn {
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: white;
+  border: 1px solid #e5e7eb;
+}
+
+.pink-btn {
+  background: linear-gradient(135deg,#ec4899,#d946ef);
+  color: white;
+  padding: 12px 22px;
+  border-radius: 18px;
+  transition: 0.3s;
+}
+
+.pink-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(236,72,153,0.25);
+}
+
+.date-input {
+  background: transparent;
+  border: none;
+  padding: 12px;
+  outline: none;
+}
+
+.cute-input {
+  background: rgba(255,255,255,0.7);
+  border: 1px solid #fbcfe8;
+  border-radius: 18px;
+  padding: 12px;
+  outline: none;
+}
+
+.cute-input:focus {
+  border-color: #ec4899;
+}
+
+.calendar-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: white;
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.25s;
+  background: rgba(255,255,255,0.7);
+}
+
+.calendar-day:hover {
+  background: #f9a8d4;
+  color: white;
+}
+
+.selected-day {
+  background: linear-gradient(135deg,#ec4899,#d946ef);
+  color: white;
+}
+
+.progress-circle-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.progress-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 999px;
+  border: 8px solid #f9a8d4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  font-weight: bold;
+  color: #ec4899;
+}
+
+.task-card {
+  background: rgba(255,255,255,0.75);
+  border-radius: 20px;
+  padding: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.low-priority {
+  border-left: 6px solid #4ade80;
+}
+
+.medium-priority {
+  border-left: 6px solid #facc15;
+}
+
+.high-priority {
+  border-left: 6px solid #f87171;
+}
+
+.toast {
+  padding: 14px 18px;
+  border-radius: 18px;
+  color: white;
+  animation: fadeIn 0.3s ease;
+}
+
+.success-toast {
+  background: #22c55e;
+}
+
+.error-toast {
+  background: #ef4444;
+}
+
+
+/* login.html */
+.login-section {
+  width: 360px;
+  height: 480px;
+  background-color: white;
+  border-radius: 15px;
+  border: 1px solid rgba(255,206,206,0.04);
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #968e8e;
+}
+
+
+
+
+.add-button,
+.note-button {
+background: linear-gradient(135deg,#ec4899,#d946ef);
+color: white;
+border-radius: 18px;
+padding: 14px 24px;
+}
+.calendar-btn {
+width: 40px;
+height: 40px;
+border-radius: 14px;
+background: rgba(255,255,255,0.7);
+}
+.theme-neon .calendar-btn {
+background: rgba(0,0,0,0.3);
+}
+
+.task-card {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 16px;
+border-radius: 22px;
+background: rgba(255,255,255,0.7);
+}
+.theme-neon .task-card {
+background: rgba(0,0,0,0.3);
+}
+.low-priority {
+border-left: 6px solid #4ade80;
+}
+.medium-priority {
+border-left: 6px solid #facc15;
+}
+.high-priority {
+border-left: 6px solid #ef4444;
+}
+
+.progress-bar {
+width: 0%;
+height: 100%;
+background: linear-gradient(135deg,#ec4899,#d946ef, #0dc9bf);
+transition: 0.4s;
+}
+.notes-area {
+width: 100%;
+min-height: 180px;
+resize: vertical;
+}
+
